@@ -1,8 +1,27 @@
+from IPython.display import HTML 
 from time import sleep
 import sys
 import random
 
 version = "v0.1"
+
+
+def start(scene):
+    HTML('''<script>
+    code_show=true;
+    function code_toggle() {
+     if (code_show){
+     $('div#temple').hide();
+     } else {
+     $('div#temple').show();
+     }
+     code_show = !code_show
+    }
+    $( document ).ready(code_toggle);
+    </script>
+    The raw code for this IPython notebook is by default hidden for easier reading.
+    To toggle on/off the raw code, click <a
+         href="javascript:code_toggle()">here</a>.''')
 
 
 def run(scene):
