@@ -15,15 +15,18 @@ def run_temple():
     type_text(text)
     force_answer('y')
     type_text("Ah, good choice... let's begin then.")
-    type_text("As telepaths, we connect mind, devices and code, routing messages from one place to "
-              "another on behalf of the guild.  This is especially benificiary when wizards want "
-              " to craft spells to talk to enchanted objects, or enchantresses whant wizard spells "
-              " to enhance their enchanted items.")
-    type_text("This difficult task requires concentration and mostly silence.")
-    type_text("Adept you must empty your mind to recieve the teachings.")
+    type_text("As telepaths, we connect mind, device, and code, routing messages from one place to"
+              " another on behalf of the guild. This is especially beneficiary when wizards want"
+              " to craft spells to talk to enchanted objects, or enchantresses want wizard spells"
+              " to enhance their enchanted items."
+              )
+    type_text("This difficult task requires concentration and organization.  We enhance these"
+              " attributes in ourselves as we train in silence…"
+              )
+    type_text("Adept you must empty your mind to receive the teachings.")
     type_text("Is your mind clear? Are you ready to continue? ")
     force_answer('y')
-    type_text("Excelent! Complete the exercise below, and I'll come back to check your work")
+    type_text("Excellent! Complete the exercise below, and I'll come back to check your work")
     type_text("Shutting down interface.....")
 
 
@@ -37,9 +40,10 @@ def force_answer(wanted, prompt='$'):
 
     user_input = ''
     wanted = wanted.lower()
-    while user_input != wanted:
+    len_wanted = len(wanted)
+    while user_input[:len_wanted] != wanted:
         user_input = input(prompt).lower()
-        if user_input != wanted:
+        if user_input[:len_wanted] != wanted:
             prompt = random.choice(try_again)
 
 
